@@ -1,69 +1,67 @@
 function setup() {
   createCanvas(1000, 1000);
   
-  
-  
-  
 }
 
 function draw() {
   
   //Make Grid
 
-  let w = width / size;
-  for (let i=0; i < size; i++) {
-    for (let j=0; j < size; j++) {
-      let x = i*w + w/2;
-      let y = j*w + w/2;
-      drawTile(x,y,size)
+  let w = 1000;
+    for (let i=0; i < 9; i++) {
+      for (let j=0; j < 9; j++) {
+        let tileX = i*w +1;
+        let tileY = j*w +1;
+        drawTile(tileX, tileY, 1000, 1000)
 
     }
 }}
 
-function drawTile(x,y,size) {
-  //Draw piece
+function drawTile(tileX, tileY, tileWidth, tileHeight) {
   
-  let xCenter = (size/2);
-  let yCenter = (size/2);
-  let triangleEdge = (size/4);
-  let triangleTop = (size/4)
+  let centerX = tileWidth/2;
+  let centerY = tileHeight/2;
+  let midX = tileWidth/4;
+  let midY = tileHeight/4;
   
+
   background(220);
   stroke(5);
   fill("#c4071d");
-  rect(x, y, size, size)
+  rect(tileX, tileY, tileWidth, tileHeight);
   
   //Make top piece
   fill("#ffd630");
-  triangle(x,y,size,x,size/2,size/2);
+  triangle(tileX, tileY, tileWidth, tileX, centerX, centerY);
   
   fill("#329fe3");
-  quad(xCenter, yCenter, triangleTop, triangleEdge, triangleTop, y, xCenter, triangleEdge)
+  quad(centerX, centerY, midX, midY, midY, tileY, centerX, midY)
+  
   fill("#154296");
-  quad(xCenter, yCenter, triangleTop * 3, triangleEdge, triangleTop * 3, y, xCenter, triangleEdge)
+  quad(centerX, centerY, midX * 3, midY, midX * 3, tileY, centerX, midY)
   
   //Make bottom piece
   fill("#ffd630");
-  triangle(x,size,xCenter, yCenter,size,size);
+  triangle(tileX,tileHeight,centerX, centerY, tileWidth, tileHeight);
   
   fill("#2ec4b6");
-  quad(xCenter, yCenter, triangleTop, triangleEdge*3, triangleTop, size, xCenter, triangleEdge *3)
+  quad(centerX, centerY, midX, midY*3, midX, tileWidth, centerX, midY *3)
   fill("#ff9f1c");
-  quad(xCenter, yCenter, triangleTop * 3, triangleEdge*3, triangleTop * 3, size, xCenter, triangleEdge*3)
+  quad(centerX, centerY, midX * 3, midY * 3, midX * 3, tileHeight, centerX, midY*3)
   
   //Make left side piece
   
   fill("#213647");
-  quad(xCenter, yCenter, triangleTop, triangleEdge, x, size/4, triangleEdge, yCenter)
+  quad(centerX, centerY, midX, midY, tileX, midY, midX, centerY)
   fill("#ed3441");
-  quad(xCenter, yCenter, triangleTop, triangleEdge*2, x, size/4 *3, triangleEdge, size/4 *3)
+  quad(centerX, centerY, midX, midY*2, tileX, midY *3, midX, midY *3)
   
   
   //Make right side piece
   fill("#ed3441");
-  quad(xCenter, yCenter, triangleTop * 3, triangleEdge, size, size/4, triangleEdge * 3, yCenter)
+  quad(centerX, centerY, midX * 3, midY, tileWidth, midY, midX * 3, centerY)
   fill("#247ba0");
-  quad(xCenter, yCenter, triangleTop *3, triangleEdge*3, size, size/4 *3, triangleEdge *3, yCenter)
+  quad(centerX, centerY, midX *3, midY*3, tileHeight, midY *3, midX *3, centerY)
 
   
 }
