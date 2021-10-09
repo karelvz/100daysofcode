@@ -1,0 +1,44 @@
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background("white");
+  noStroke();
+
+  // Arc slices
+  fill("#FC600A");
+  let arc1 = arc(200, 200, 400, 400, -1 * PI/12, PI/12);
+  fill("#FE2712");
+  let arc2 = arc(200, 200, 400, 400, PI/12, PI/12 * 3);
+  fill("#C21460");
+  let arc3 = arc(200, 200, 400, 400, PI/12 * 3, PI/12 * 5);
+  fill("#8601AF");
+  let arc4 = arc(200, 200, 400, 400, PI/12 * 5, PI/12 * 7);
+  fill("#4424D6");
+  let arc5 = arc(200, 200, 400, 400, PI/12 * 7, PI/12 * 9);
+  fill("#0247FE");
+  let arc6 = arc(200, 200, 400, 400, PI/12 * 9, PI/12 * 11);
+  fill("#347C98");
+  let arc7 = arc(200, 200, 400, 400, PI/12 * 11, PI/12 * 13);
+  fill("#66B032");
+  let arc8 = arc(200, 200, 400, 400, PI/12 * 13, PI/12 * 15);
+  fill("#B2D732");
+  let arc9 = arc(200, 200, 400, 400, PI/12 * 15, PI/12 * 17);
+  fill("#FEFE33");
+  let arc10 = arc(200, 200, 400, 400, PI/12 * 17, PI/12 * 19);
+  fill("#FCCC1A");
+  let arc11 = arc(200, 200, 400, 400, PI/12 * 19, PI/12 * 21);
+  fill("#FB9902");
+  let arc12 = arc(200, 200, 400, 400, PI/12 * 21, PI/12 * 23);
+  
+  
+  //Draw white circle
+  fill("white");
+  circle(200,200,275);
+  
+  //Shape in the middle
+  //point();
+  
+  
+}
