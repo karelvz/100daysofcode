@@ -7,32 +7,33 @@ function draw() {
   
   //Make Grid
 
-  let w = 1000;
-    for (let i=0; i < 9; i++) {
-      for (let j=0; j < 9; j++) {
-        let tileX = i*w +1;
-        let tileY = j*w +1;
-        drawTile(tileX, tileY, 1000, 1000)
+  let w = 100;
+    for (let i=0; i < 5; i++) {
+      //for (let j=0; j < 5; j++) {
+      let tileX = i*w;
+      let tileY = 0;
+  
+      drawTile(tileX, tileY, tileX + 100, tileY + 100);
 
     }
-}}
+}
 
 function drawTile(tileX, tileY, tileWidth, tileHeight) {
   
-  let centerX = tileWidth/2;
-  let centerY = tileHeight/2;
-  let midX = tileWidth/4;
-  let midY = tileHeight/4;
+  let centerX = tileX + tileWidth/2;
+  let centerY = tileY + tileHeight/2;
+  let midX = tileX + tileWidth/4;
+  let midY = tileY + tileHeight/4;
   
 
   background(220);
   stroke(5);
   fill("#c4071d");
-  rect(tileX, tileY, tileWidth, tileHeight);
+  rect(tileX, tileY, tileX + tileWidth, tileY + tileHeight);
   
   //Make top piece
   fill("#ffd630");
-  triangle(tileX, tileY, tileWidth, tileX, centerX, centerY);
+  triangle(tileX, tileY, tileX + tileWidth, tileX, centerX, centerY);
   
   fill("#329fe3");
   quad(centerX, centerY, midX, midY, midY, tileY, centerX, midY)
@@ -42,12 +43,12 @@ function drawTile(tileX, tileY, tileWidth, tileHeight) {
   
   //Make bottom piece
   fill("#ffd630");
-  triangle(tileX,tileHeight,centerX, centerY, tileWidth, tileHeight);
+  triangle(tileX,tileY + tileHeight,centerX, centerY, tileX + tileWidth, tileY + tileHeight);
   
   fill("#2ec4b6");
-  quad(centerX, centerY, midX, midY*3, midX, tileWidth, centerX, midY *3)
+  quad(centerX, centerY, midX, midY*3, midX, tileX + tileWidth, centerX, midY *3)
   fill("#ff9f1c");
-  quad(centerX, centerY, midX * 3, midY * 3, midX * 3, tileHeight, centerX, midY*3)
+  quad(centerX, centerY, midX * 3, midY * 3, midX * 3, tileY + tileHeight, centerX, midY*3)
   
   //Make left side piece
   
@@ -59,9 +60,9 @@ function drawTile(tileX, tileY, tileWidth, tileHeight) {
   
   //Make right side piece
   fill("#ed3441");
-  quad(centerX, centerY, midX * 3, midY, tileWidth, midY, midX * 3, centerY)
+  quad(centerX, centerY, midX * 3, midY, tileX + tileWidth, midY, midX * 3, centerY)
   fill("#247ba0");
-  quad(centerX, centerY, midX *3, midY*3, tileHeight, midY *3, midX *3, centerY)
+  quad(centerX, centerY, midX *3, midY*3, tileY + tileHeight, midY *3, midX *3, centerY)
 
   
 }
