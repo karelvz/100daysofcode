@@ -1,0 +1,20 @@
+function setup() {
+  createCanvas(500, 500);
+}
+
+function draw() {
+  
+  stroke(255);
+  background(51);
+  
+  let fromColor = color(75, 0, 130);
+  let toColor = color(255, 160, 122);
+  
+  let c = 500/25;
+  
+  for (let i=0; i<25; i++) {
+    let interColor = lerpColor(fromColor, toColor, (1/25)*i);
+    fill(interColor);
+    rect(i*c, 0, (i*c) + c, 500);
+  }  
+}
